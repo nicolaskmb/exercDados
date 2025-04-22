@@ -1,5 +1,4 @@
-import estruturas.Lista;
-import estruturas.Vetor;
+import estruturas.*;
 
 
 public class App {
@@ -49,5 +48,28 @@ public class App {
         lista.mostrarNos();
         lista.numeroDeNos();
 
+        EditorTexto editor = new EditorTexto(10);
+        editor.inserirTexto("Olá, ");
+        editor.mostrarTexto();
+        editor.inserirTexto("mundo!");
+        editor.mostrarTexto();
+        editor.desfazer();
+        editor.mostrarTexto();
+        editor.refazer();
+        editor.mostrarTexto();
+        editor.inserirTexto(" Como vai?");
+        editor.mostrarTexto();
+        editor.desfazer();
+        editor.desfazer();
+        editor.mostrarTexto();
+
+        Fila fila = new Fila(5);
+        fila.enfileirar(new Documento("Documento1.pdf", 120));
+        fila.enfileirar(new Documento("Relatorio.docx", 85));
+        fila.enfileirar(new Documento("Foto.png", 300));
+        fila.mostrarFila();
+
+        System.out.println("Imprimindo: " + fila.desenfileirar().getNome());
+        fila.mostrarFila();
     }
 }
